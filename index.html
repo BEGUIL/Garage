@@ -17,7 +17,14 @@
   </div></header>
 
   <main>
-    <section class="hero hero-home"><div class="container">
+    <section class="hero hero-home" data-hero-slider>
+      <div class="hero-slides" aria-hidden="true">
+        <div class="hero-slide is-active" style="--hero-image: url('https://images.pexels.com/photos/7540624/pexels-photo-7540624.jpeg?auto=compress&cs=tinysrgb&w=1800');"></div>
+        <div class="hero-slide" style="--hero-image: url('https://images.pexels.com/photos/12555010/pexels-photo-12555010.jpeg?auto=compress&cs=tinysrgb&w=1800');"></div>
+        <div class="hero-slide" style="--hero-image: url('https://images.pexels.com/photos/15489247/pexels-photo-15489247.jpeg?auto=compress&cs=tinysrgb&w=1800');"></div>
+        <div class="hero-slide" style="--hero-image: url('https://images.pexels.com/photos/4439585/pexels-photo-4439585.jpeg?auto=compress&cs=tinysrgb&w=1800');"></div>
+      </div>
+      <div class="container">
       <div>
         <span class="eyebrow">Garage indépendant · Abidjan</span>
         <h1>Votre voiture mérite le <span class="accent">meilleur.</span></h1>
@@ -25,7 +32,14 @@
         <div class="hero-actions"><a class="btn btn-primary" href="contact.html">Prendre rendez-vous <span>↗</span></a><a class="btn btn-light" href="services.html">Découvrir nos services</a></div>
       </div>
       <aside class="hero-note"><div class="hero-note-top"><span>CE QUE DISENT NOS CLIENTS</span><span class="rating">★★★★★</span></div><strong>« Enfin un garage où l'on prend le temps d'expliquer. »</strong><p>— Aïcha K., cliente depuis 2021</p></aside>
-    </div><span class="scroll-cue">Faire défiler ↓</span></section>
+      </div>
+      <div class="hero-slider-controls" aria-label="Contrôles des images du hero">
+        <button class="hero-slider-arrow" type="button" data-hero-prev aria-label="Image précédente">←</button>
+        <div class="hero-slider-dots"><button class="hero-dot is-active" type="button" data-hero-dot="0" aria-label="Afficher l'image 1"></button><button class="hero-dot" type="button" data-hero-dot="1" aria-label="Afficher l'image 2"></button><button class="hero-dot" type="button" data-hero-dot="2" aria-label="Afficher l'image 3"></button><button class="hero-dot" type="button" data-hero-dot="3" aria-label="Afficher l'image 4"></button></div>
+        <button class="hero-slider-arrow" type="button" data-hero-next aria-label="Image suivante">→</button>
+      </div>
+      <span class="scroll-cue">Faire défiler ↓</span>
+    </section>
 
     <section class="section section-tight"><div class="container"><div class="stats-row reveal">
       <div class="stat"><strong data-count="12" data-suffix=" ans">0</strong><span>d'expertise locale</span></div><div class="stat"><strong data-count="4800" data-suffix="+">0</strong><span>véhicules accompagnés</span></div><div class="stat"><strong data-count="98" data-suffix="%">0</strong><span>de clients satisfaits</span></div><div class="stat"><strong>4.9<span style="font-size:1.5rem">/5</span></strong><span>note moyenne</span></div>
