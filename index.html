@@ -1,135 +1,56 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#101110">
-    <meta name="description" content="Noir Voile, votre atelier automobile indépendant. Entretien, diagnostic et réparations avec exigence et transparence.">
-    <title>Noir Voile — Atelier automobile</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header" id="top">
-      <nav class="nav wrap" aria-label="Navigation principale">
-        <a class="brand" href="index.html" aria-label="Noir Voile, accueil">
-          <span class="brand-mark" aria-hidden="true">NV</span>
-          <span class="brand-name">NOIR <i>VOILE</i><small>ATELIER AUTOMOBILE</small></span>
-        </a>
-        <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-menu">
-          <span></span><span></span>
-        </button>
-        <div class="nav-links" id="main-menu">
-          <a href="index.html" aria-current="page">Accueil</a>
-          <a href="services.html">Prestations</a>
-          <a href="atelier.html">L'atelier</a>
-          <a href="realisations.html">Réalisations</a>
-          <a class="nav-contact" href="contact.html">Prendre rendez-vous <span aria-hidden="true">↗</span></a>
-        </div>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Berguil Garage — entretien, diagnostic et réparation automobile avec exigence.">
+  <title>Berguil Garage — L'entretien qui vous mène plus loin</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <header class="site-header"><div class="container nav-wrap">
+    <a class="brand" href="index.html"><span class="brand-mark"><span>✦</span></span> BERGUIL GARAGE</a>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="index.html" data-page="home">Accueil</a><a href="services.html" data-page="services">Services</a><a href="a-propos.html" data-page="about">À propos</a><a href="equipe.html" data-page="team">L'équipe</a><a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Prendre rendez-vous <span>↗</span></a>
+  </div></header>
 
-    <main>
-      <section class="hero">
-        <img class="hero-image" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=88" alt="Voiture sportive stationnée dans un décor sombre">
-        <div class="hero-shade"></div>
-        <div class="hero-content wrap">
-          <p class="eyebrow"><span></span> L'exigence mécanique, autrement</p>
-          <h1>La précision<br>est notre <em>signature.</em></h1>
-          <p class="hero-intro">Un atelier indépendant pour celles et ceux qui aiment leur voiture. Diagnostic, entretien et réparations, réalisés avec soin et expliqués en toute clarté.</p>
-          <div class="hero-actions">
-            <a class="button button-accent" href="contact.html">Confier mon véhicule <span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="services.html">Découvrir nos prestations <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="hero-note"><span class="status-dot"></span> Atelier indépendant · Sur rendez-vous</div>
-        </div>
-        <a class="scroll-cue" href="#engagements" aria-label="Défiler vers la suite"><span></span> DÉFILER</a>
-      </section>
-
-      <section class="trust-strip" id="engagements">
-        <div class="wrap trust-grid">
-          <div><span class="trust-index">01</span><p>Un diagnostic<br><strong>sans approximation</strong></p></div>
-          <div><span class="trust-index">02</span><p>Des explications<br><strong>sans jargon</strong></p></div>
-          <div><span class="trust-index">03</span><p>Un devis clair<br><strong>avant intervention</strong></p></div>
-          <div><span class="trust-index">04</span><p>Le soin du détail<br><strong>à chaque étape</strong></p></div>
-        </div>
-      </section>
-
-      <section class="section wrap intro-section reveal">
-        <div class="section-kicker">L'esprit Noir Voile <span>— 01</span></div>
-        <div class="intro-layout">
-          <h2>Le bon geste.<br><em>Le bon conseil.</em></h2>
-          <div class="intro-copy">
-            <p class="lead">Votre voiture mérite mieux qu'une intervention à la chaîne.</p>
-            <p>Chez Noir Voile, chaque véhicule est accueilli avec la même attention. Nous prenons le temps de comprendre le problème, de vous présenter les solutions et de travailler proprement, du premier contrôle à la remise des clés.</p>
-            <a class="arrow-link" href="atelier.html">Découvrir notre atelier <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="services-preview">
-        <div class="wrap section reveal">
-          <div class="section-heading">
-            <div><div class="section-kicker">Nos expertises <span>— 02</span></div><h2>Tout ce qu'il faut.<br><em>Rien de superflu.</em></h2></div>
-            <a class="arrow-link desktop-link" href="services.html">Toutes les prestations <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="service-cards">
-            <a class="service-card" href="services.html#entretien">
-              <span class="card-number">01 / ENTRETIEN</span><span class="service-icon" aria-hidden="true">↗</span>
-              <h3>Entretien<br>& révision</h3><p>Pour préserver les performances et rouler sereinement, toute l'année.</p>
-            </a>
-            <a class="service-card" href="services.html#diagnostic">
-              <span class="card-number">02 / DIAGNOSTIC</span><span class="service-icon" aria-hidden="true">⌁</span>
-              <h3>Diagnostic<br>& recherche de panne</h3><p>Identifier l'origine du problème avant d'intervenir, avec méthode.</p>
-            </a>
-            <a class="service-card" href="services.html#reparation">
-              <span class="card-number">03 / RÉPARATION</span><span class="service-icon" aria-hidden="true">✳</span>
-              <h3>Mécanique<br>& réparations</h3><p>Des réparations soignées et adaptées à votre véhicule et à votre budget.</p>
-            </a>
-          </div>
-          <a class="arrow-link mobile-link" href="services.html">Toutes les prestations <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
-
-      <section class="feature-section wrap reveal">
-        <div class="feature-image">
-          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1200&q=85" alt="Mécanicien concentré sur l'entretien d'un véhicule" loading="lazy">
-          <span class="image-caption">Le souci du détail, à chaque intervention.</span>
-        </div>
-        <div class="feature-copy">
-          <div class="section-kicker">Un atelier à taille humaine <span>— 03</span></div>
-          <h2>La confiance<br>se construit <em>en atelier.</em></h2>
-          <p>Nous croyons qu'un bon garage ne se contente pas de réparer. Il écoute, conseille et tient ses engagements. C'est cette relation simple et directe que nous voulons bâtir avec chaque conducteur.</p>
-          <a class="button button-outline" href="atelier.html">Notre façon de travailler <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
-
-      <section class="quote-band reveal">
-        <div class="wrap quote-content">
-          <span class="quote-mark" aria-hidden="true">“</span>
-          <p>Votre véhicule entre avec une question.<br>Il repart avec une réponse.</p>
-          <span class="quote-rule"></span>
-          <small>NOIR VOILE · L'ATELIER, EN TOUTE TRANSPARENCE</small>
-        </div>
-      </section>
-
-      <section class="contact-banner wrap reveal">
-        <div><div class="section-kicker">On en parle ? <span>— 04</span></div><h2>La prochaine étape,<br><em>c'est votre appel.</em></h2></div>
-        <div class="contact-banner-action"><p>Expliquez-nous ce dont votre voiture a besoin. Nous vous répondrons pour organiser la suite.</p><a class="button button-accent" href="contact.html">Contacter l'atelier <span aria-hidden="true">↗</span></a></div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="wrap footer-main">
-        <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">NV</span><span class="brand-name">NOIR <i>VOILE</i><small>ATELIER AUTOMOBILE</small></span></a>
-        <p>Le soin du détail.<br>La confiance au volant.</p>
-        <div class="footer-nav"><a href="services.html">Prestations</a><a href="atelier.html">L'atelier</a><a href="realisations.html">Réalisations</a><a href="contact.html">Contact</a></div>
-        <a class="footer-top" href="#top" aria-label="Retour en haut">↑</a>
+  <main>
+    <section class="hero hero-home"><div class="container">
+      <div>
+        <span class="eyebrow">Garage indépendant · Abidjan</span>
+        <h1>Votre voiture mérite le <span class="accent">meilleur.</span></h1>
+        <p class="hero-copy">Un atelier à taille humaine, des mains expertes et la transparence à chaque étape. On s'occupe de votre voiture comme si c'était la nôtre.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="contact.html">Prendre rendez-vous <span>↗</span></a><a class="btn btn-light" href="services.html">Découvrir nos services</a></div>
       </div>
-      <div class="wrap footer-bottom"><span>© <span data-year></span> Noir Voile. Tous droits réservés.</span><span>Atelier indépendant · Coordonnées à compléter</span></div>
-    </footer>
-  </body>
+      <aside class="hero-note"><div class="hero-note-top"><span>CE QUE DISENT NOS CLIENTS</span><span class="rating">★★★★★</span></div><strong>« Enfin un garage où l'on prend le temps d'expliquer. »</strong><p>— Aïcha K., cliente depuis 2021</p></aside>
+    </div><span class="scroll-cue">Faire défiler ↓</span></section>
+
+    <section class="section section-tight"><div class="container"><div class="stats-row reveal">
+      <div class="stat"><strong data-count="12" data-suffix=" ans">0</strong><span>d'expertise locale</span></div><div class="stat"><strong data-count="4800" data-suffix="+">0</strong><span>véhicules accompagnés</span></div><div class="stat"><strong data-count="98" data-suffix="%">0</strong><span>de clients satisfaits</span></div><div class="stat"><strong>4.9<span style="font-size:1.5rem">/5</span></strong><span>note moyenne</span></div>
+    </div></div></section>
+
+    <section class="section section-cream"><div class="container">
+      <div class="section-head reveal"><div><span class="kicker">Nos expertises</span><h2>Le bon geste,<br><em>au bon moment.</em></h2></div><p>De l'entretien courant aux réparations complexes, nos techniciens vous accompagnent avec méthode et simplicité.</p></div>
+      <div class="service-grid">
+        <a class="service-card reveal" href="services.html#entretien"><div><span class="service-index">01 / 04</span><div class="service-icon">◌</div><h3>Entretien & révision</h3><p>Vidange, filtres, niveaux et contrôles essentiels pour rouler serein.</p></div><span class="service-link">En savoir plus ↗</span></a>
+        <a class="service-card reveal" href="services.html#diagnostic"><div><span class="service-index">02 / 04</span><div class="service-icon">⌁</div><h3>Diagnostic électronique</h3><p>Nous lisons les signaux de votre véhicule pour trouver la vraie cause.</p></div><span class="service-link">En savoir plus ↗</span></a>
+        <a class="service-card reveal" href="services.html#freinage"><div><span class="service-index">03 / 04</span><div class="service-icon">◎</div><h3>Freinage & pneus</h3><p>Une voiture sûre commence par des freins et des pneus parfaitement suivis.</p></div><span class="service-link">En savoir plus ↗</span></a>
+        <a class="service-card reveal" href="services.html#climatisation"><div><span class="service-index">04 / 04</span><div class="service-icon">✧</div><h3>Climatisation</h3><p>Recharge, recherche de fuite et entretien pour retrouver votre confort.</p></div><span class="service-link">En savoir plus ↗</span></a>
+        <a class="service-card reveal" href="contact.html"><div><span class="service-index">SUR MESURE</span><div class="service-icon">+</div><h3>Un besoin particulier ?</h3><p>Parlez-nous de votre voiture, on vous répond avec une solution claire.</p></div><span class="service-link">Nous écrire ↗</span></a>
+        <a class="service-card reveal" href="a-propos.html"><div><span class="service-index">BERGUIL GARAGE</span><div class="service-icon">⌘</div><h3>Notre méthode</h3><p>Une relation simple, des explications sans jargon, un travail durable.</p></div><span class="service-link">Notre histoire ↗</span></a>
+      </div>
+    </div></section>
+
+    <section class="section"><div class="container split"><div class="split-image reveal"><img src="https://images.pexels.com/photos/4439585/pexels-photo-4439585.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mécanicien africain concentré sur un moteur"><span class="image-tag">L'humain avant tout.</span></div><div class="split-copy reveal"><span class="kicker">Pourquoi Berguil ?</span><h2>La mécanique, avec <em>un visage.</em></h2><p>Nous pensons qu'un bon garage ne se résume pas à des outils. C'est une équipe qui vous écoute, vous explique et tient ses engagements.</p><ul class="check-list"><li>Devis clair avant chaque intervention</li><li>Pièces sélectionnées pour durer</li><li>Garantie sur nos interventions</li></ul><div class="hero-actions"><a class="btn btn-dark" href="a-propos.html">Découvrir notre histoire <span>↗</span></a></div></div></div></section>
+
+    <section class="section section-dark"><div class="container"><div class="section-head reveal"><div><span class="kicker">Notre promesse</span><h2>Simple, précis,<br><em>transparent.</em></h2></div><p>Chaque voiture repart avec le même niveau d'attention, qu'elle soit neuve ou qu'elle ait déjà beaucoup roulé.</p></div><div class="process-grid"><div class="process-step reveal"><span class="process-no">01 / ÉCOUTER</span><h3>Comprendre avant d'agir</h3><p>Nous commençons par vos symptômes, vos habitudes et vos priorités.</p></div><div class="process-step reveal"><span class="process-no">02 / DIAGNOSTIQUER</span><h3>Trouver la vraie cause</h3><p>Un diagnostic précis pour éviter les dépenses inutiles.</p></div><div class="process-step reveal"><span class="process-no">03 / RÉPARER</span><h3>Faire le travail juste</h3><p>Des gestes maîtrisés et des pièces choisies avec soin.</p></div><div class="process-step reveal"><span class="process-no">04 / SUIVRE</span><h3>Rester disponible</h3><p>On vous explique ce qui a été fait et la suite à prévoir.</p></div></div></div></section>
+
+    <section class="section"><div class="container quote-grid"><div class="quote-card reveal"><blockquote>« Ils ont gagné ma confiance dès la première visite. »</blockquote><footer><img class="avatar" src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=120" alt="Cliente Aïcha"><span>Aïcha K. · Toyota RAV4</span></footer></div><div class="quote-side reveal"><div><span class="rating">★★★★★</span><p>4,9 sur Google · 230 avis</p></div><h3>Une équipe<br>qui assure.</h3><a class="btn btn-light" href="contact.html">Parler à l'équipe ↗</a></div></div></section>
+    <section class="cta-band"><div class="container"><h2>Votre prochaine bonne décision commence ici.</h2><a class="btn" href="contact.html">Prendre rendez-vous <span>↗</span></a></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a class="brand" href="index.html"><span class="brand-mark"><span>✦</span></span> BERGUIL GARAGE</a><p>Le garage qui prend soin de votre voiture et de votre tranquillité, à Abidjan depuis 2012.</p></div><div class="footer-col"><h4>Navigation</h4><a href="services.html">Services</a><a href="a-propos.html">À propos</a><a href="equipe.html">L'équipe</a><a href="contact.html">Contact</a></div><div class="footer-col"><h4>Nous trouver</h4><span>Cocody Angré 8e tranche</span><span>Abidjan, Côte d'Ivoire</span><a href="tel:+2250707070707">+225 07 07 07 07 07</a></div><div class="footer-col"><h4>Horaires</h4><span>Lun — Ven · 08h — 18h</span><span>Samedi · 09h — 15h</span><span>Dimanche · Fermé</span></div></div><div class="footer-bottom"><span>© <span data-year></span> Berguil Garage. Tous droits réservés.</span><span>Instagram · WhatsApp · Google</span></div></div></footer>
+  <script src="script.js"></script>
+</body>
 </html>

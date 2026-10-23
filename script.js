@@ -1,69 +1,67 @@
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.site-header');
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav-links');
 
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = menuToggle.getAttribute('aria-expanded') !== 'true';
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    navLinks.classList.toggle('is-open', isOpen);
-    document.body.classList.toggle('menu-open', isOpen);
-  });
-
-  navLinks.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      menuToggle.setAttribute('aria-expanded', 'false');
-      navLinks.classList.remove('is-open');
-      document.body.classList.remove('menu-open');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.textContent = open ? '×' : '☰';
     });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.textContent = '☰';
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  }
+
+  window.addEventListener('scroll', () => header?.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+
+  const current = document.body.dataset.page;
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    if (link.dataset.page === current) link.classList.add('active');
   });
-}
 
-const revealItems = document.querySelectorAll('.reveal');
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if ('IntersectionObserver' in window && !prefersReducedMotion) {
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
-  revealItems.forEach((item) => revealObserver.observe(item));
-} else {
-  revealItems.forEach((item) => item.classList.add('is-visible'));
-}
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-document.querySelectorAll('[data-year]').forEach((element) => {
-  element.textContent = new Date().getFullYear();
-});
-
-const contactForm = document.querySelector('#contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if (!contactForm.reportValidity()) return;
-
-    const formData = new FormData(contactForm);
-    const subject = `Demande Noir Voile — ${formData.get('subject')}`;
-    const body = [
-      `Nom : ${formData.get('name')}`,
-      `E-mail : ${formData.get('email')}`,
-      `Téléphone : ${formData.get('phone') || 'Non renseigné'}`,
-      '',
-      'Message :',
-      formData.get('message')
-    ].join('\n');
-
-    const recipient = 'ADRESSE_EMAIL_A_CONFIGURER';
-    const note = document.querySelector('#form-note');
-    if (recipient === 'ADRESSE_EMAIL_A_CONFIGURER') {
-      note.textContent = "Le formulaire est prêt. Ajoutez l'adresse e-mail du garage dans script.js pour activer l'envoi du message.";
-      note.classList.add('form-note-error');
-      return;
-    }
-
-    window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = Number(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    let started = false;
+    const counter = new IntersectionObserver(entries => {
+      if (!entries[0].isIntersecting || started) return;
+      started = true;
+      let value = 0;
+      const step = Math.max(1, Math.ceil(target / 36));
+      const timer = setInterval(() => {
+        value = Math.min(target, value + step);
+        el.textContent = value + suffix;
+        if (value >= target) clearInterval(timer);
+      }, 32);
+      counter.disconnect();
+    }, { threshold: .7 });
+    counter.observe(el);
   });
-}
+
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => button.closest('.faq-item').classList.toggle('open'));
+  });
+
+  const form = document.querySelector('#contact-form');
+  if (form) form.addEventListener('submit', event => {
+    event.preventDefault();
+    form.reset();
+    document.querySelector('.form-success')?.classList.add('show');
+  });
+
+  document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+});
