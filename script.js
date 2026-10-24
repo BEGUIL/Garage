@@ -58,6 +58,65 @@ document.addEventListener('DOMContentLoaded', () => {
     start();
   }
 
+  const testimonialSlider = document.querySelector('[data-testimonial-slider]');
+  if (testimonialSlider) {
+    const slides = [...testimonialSlider.querySelectorAll('[data-testimonial-slide]')];
+    const dots = [...testimonialSlider.querySelectorAll('[data-testimonial-dot]')];
+    const previous = testimonialSlider.querySelector('[data-testimonial-prev]');
+    const next = testimonialSlider.querySelector('[data-testimonial-next]');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let currentSlide = 0;
+    let timer;
+    const showSlide = index => {
+      currentSlide = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === currentSlide));
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === currentSlide);
+        dot.setAttribute('aria-current', i === currentSlide ? 'true' : 'false');
+      });
+    };
+    const start = () => {
+      clearInterval(timer);
+      if (reducedMotion || document.hidden || slides.length < 2) return;
+      timer = setInterval(() => showSlide(currentSlide + 1), 5600);
+    };
+    previous?.addEventListener('click', () => { showSlide(currentSlide - 1); start(); });
+    next?.addEventListener('click', () => { showSlide(currentSlide + 1); start(); });
+    dots.forEach(dot => dot.addEventListener('click', () => { showSlide(Number(dot.dataset.testimonialDot)); start(); }));
+    testimonialSlider.addEventListener('mouseenter', () => clearInterval(timer));
+    testimonialSlider.addEventListener('mouseleave', start);
+    testimonialSlider.addEventListener('focusin', () => clearInterval(timer));
+    testimonialSlider.addEventListener('focusout', event => { if (!testimonialSlider.contains(event.relatedTarget)) start(); });
+    document.addEventListener('visibilitychange', start);
+    showSlide(0);
+    start();
+  }
+
+  const reviewToggle = document.querySelector('[data-review-toggle]');
+  const reviewForm = document.querySelector('[data-review-form]');
+  if (reviewToggle && reviewForm) {
+    reviewToggle.addEventListener('click', () => {
+      const isOpening = reviewForm.hidden;
+      reviewForm.hidden = !isOpening;
+      reviewToggle.setAttribute('aria-expanded', String(isOpening));
+      if (isOpening) reviewForm.querySelector('input')?.focus();
+    });
+    reviewForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const data = new FormData(reviewForm);
+      const name = data.get('reviewName')?.toString().trim() || 'Client';
+      const rating = data.get('reviewRating')?.toString().trim() || '5';
+      const message = data.get('reviewMessage')?.toString().trim() || '';
+      const whatsappMessage = ['Bonjour Kora Garage 👋', '', 'Je souhaite laisser un avis client.', `Nom : ${name}`, `Note : ${rating}/5`, `Avis : ${message}`].join('\n');
+      const whatsappUrl = `https://wa.me/237683601901?text=${encodeURIComponent(whatsappMessage)}`;
+      const whatsappWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+      if (!whatsappWindow) window.location.href = whatsappUrl;
+      const success = reviewForm.querySelector('[data-review-success]');
+      if (success) success.textContent = 'Merci ! WhatsApp s’ouvre pour transmettre votre avis.';
+      reviewForm.reset();
+    });
+  }
+
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav-links');
