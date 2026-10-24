@@ -60,8 +60,8 @@ button, input, textarea, select { font: inherit; }
 .hero-home::before { content: ''; position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 78% 30%, rgba(232,109,53,.18), transparent 35%), linear-gradient(90deg, rgba(23,21,21,.72) 0%, rgba(23,21,21,.38) 44%, rgba(23,21,21,.08) 100%); pointer-events: none; }
 .hero-home::after { display: none; }
 .hero-home .container, .page-hero .container { position: relative; z-index: 2; }
-.hero-home .container { display: grid; grid-template-columns: 1.1fr .9fr; align-items: end; gap: 70px; }
-.hero-slides { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: #151313; }
+.hero-home .container { display: grid; grid-template-columns: 1fr; align-items: end; gap: 70px; }
+.hero-slides { position: absolute; inset: 0; z-index: 0; overflow: hidden; background: #151313 url('https://cdn.prod.website-files.com/6100488168b3515f68d87480/613622e7b8e40cef79d69a23_GAP-9.jpeg') center / cover no-repeat; }
 .hero-slide { position: absolute; inset: 0; background: var(--hero-image) center / cover no-repeat; opacity: 0; transform: scale(1.045); transition: opacity 1.25s ease, transform 7s ease; filter: saturate(1.02) brightness(.9); will-change: opacity, transform; }
 .hero-slide.is-active { opacity: 1; transform: scale(1); }
 .hero-slider-controls { position: absolute; z-index: 3; right: max(24px, calc((100% - 1180px) / 2)); bottom: 36px; display: flex; align-items: center; gap: 14px; }

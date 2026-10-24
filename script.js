@@ -29,6 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
     let timer;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    slides.forEach(slide => {
+      const imageUrl = slide.dataset.heroImage;
+      if (!imageUrl) return;
+      const image = new Image();
+      image.decoding = 'async';
+      image.src = imageUrl;
+    });
     const showSlide = index => {
       currentSlide = (index + slides.length) % slides.length;
       slides.forEach((slide, i) => slide.classList.toggle('is-active', i === currentSlide));
